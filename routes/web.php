@@ -19,6 +19,12 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+
+Route::get('/rental', function () {
+    return Inertia::render('Rental/App');
+})->name('rentals.app');
+
 Route::get('/view', function () {
     return Inertia::render('Vehicle/View');
 })->name('vehicles.view');
