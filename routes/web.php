@@ -22,12 +22,12 @@ Route::get('/dashboard', function () {
 
 
 Route::get('/rental', function () {
-    return Inertia::render('Rental/App');
-})->name('rentals.app');
+    return Inertia::render('Rental/Page');
+})->name('rentals.page');
 
-Route::get('/view', function () {
-    return Inertia::render('Vehicle/View');
-})->name('vehicles.view');
+Route::get('/vehicle', function () {
+    return Inertia::render('Vehicle/Page');
+})->name('vehicles.page');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
