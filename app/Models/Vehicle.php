@@ -24,5 +24,5 @@ class Vehicle extends Model
         'partner_id',
         'emission_standart',
         'carbon_emissions',
-    ]
+    ];
 }

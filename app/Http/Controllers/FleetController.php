@@ -15,5 +15,5 @@ class FleetController extends Controller
         $fleets = Fleet::all();
 
         // Kembalikan view Inertia dengan data fleet
-return Inertia::render('Fleet/Page', ['fleets' => $fleets]);}
+        return Inertia::render('Fleet/Page', ['fleets' => $fleets]);}
 }

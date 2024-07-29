@@ -15,7 +15,7 @@ class VehicleController extends Controller
         $vehicles = Vehicle::all();
     
         // Mengirim data table ke view
-        return Inertia::render('Vehicle/Partials.ViewVehiclesTable', 
-        ['vehicle' => $vehicles]);
+        return Inertia::render('Vehicle/Partials/ViewVehiclesTable', 
+        ['vehicles' => $vehicles]);
     }
 }

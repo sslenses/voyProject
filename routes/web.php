@@ -28,16 +28,12 @@ Route::get('/rental', function () {
 })->name('rentals.page');
 
 
-Route::get('/vehicle', function () {
-    return Inertia::render('Vehicle/Page');
-})->name('vehicles.page');
-
+//route fleets table
 Route::get('/fleets', [FleetController::class, 'index']);
 
+//route vehicle table
+Route::get('/vehicle', [VehicleController::class, 'index']);
 
-Route::get('/viewdata', function () {
-    return Inertia::render('Vehicle/Partials/ViewVehiclesTable');
-})->name('viewdatas.page');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

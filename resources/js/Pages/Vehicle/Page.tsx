@@ -91,7 +91,7 @@ export default function Page({
                             </div>
                         </div>
                     </Tabs>
-                    <ViewVehiclesTable />
+                    <ViewVehiclesTable Vehicles={vehicles}/>
                 </div>
             </div>
         </AuthenticatedLayout>
