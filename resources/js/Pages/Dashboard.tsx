@@ -4,6 +4,7 @@ import { PageProps } from "@/types";
 import FormAdminLayout from "@/Layouts/FormAdminLayout";
 
 export default function Dashboard({ auth }: PageProps) {
+    
     return (
         <AuthenticatedLayout
             user={auth.user}

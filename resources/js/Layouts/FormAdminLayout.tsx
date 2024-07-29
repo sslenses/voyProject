@@ -2,6 +2,7 @@ import { Button } from '@/Components/ui/button'
 import { Input } from '@/Components/ui/input'
 import { Label } from '@/Components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/Components/ui/select'
+import ConfirmPassword from '@/Pages/Auth/ConfirmPassword'
 import { useForm, usePage } from '@inertiajs/react'
 import { FormEventHandler } from 'react'
 
@@ -11,6 +12,8 @@ export default function FormAdminLayout() {
         username: '',
         email: '',
         password: '',
+        confirmpassword:'',
+        company:'',
         role: '',
     });
 
@@ -29,12 +32,22 @@ export default function FormAdminLayout() {
                         <div className="grid m-4 w-full max-w-sm items-center gap-1.5">
                             <Label htmlFor="username" className="font-extrabold">Username</Label>
                             <Input type="username" id="username" name='username' placeholder="Username" />
+                            
                             <Label htmlFor="email" className="font-extrabold">Email</Label>
                             <Input type="email" id="email" name='email' placeholder="Email" />
+                           
                             <Label htmlFor="password" className="font-extrabold">Password</Label>
                             <Input type="password" id="password" name='password' placeholder="Password" />
+                            
+                            <Label htmlFor="confirmpassword" className="font-extrabold">Confirm Password</Label>
+                            <Input type="password" id="confirmpassword" name='confirmpassword' placeholder="Confirm Password" />
+                            
+                            <Label htmlFor="company" className="font-extrabold">Company</Label>
+                            <Input type="company" id="company" name='company' placeholder="eg. Voy Team" />
+                            
                             <Input type="hidden" name="_token" value="halo" />
-                            <Label htmlFor="password" className="font-extrabold">Role</Label>
+                            
+                            <Label htmlFor="role" className="font-extrabold">Role</Label>
                             <Select name='role'>
                                 <SelectTrigger>
                                     <SelectValue placeholder="Role" />

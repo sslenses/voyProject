@@ -9,7 +9,7 @@ class FormLogin extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['username', 'email', 'password', 'role',];
+    protected $fillable = ['username', 'email', 'password','confirmpassword', 'company', 'role',];
     protected $table = "items";
     
 }

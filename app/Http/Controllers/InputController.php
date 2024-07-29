@@ -16,8 +16,10 @@ class InputController extends Controller
     {
         $request->validate([
             'username' => 'required|string|max:255',
-            'email' => 'required|string|max:255',
-            'password' => 'required|string|max:255',
+            'email' => 'required|string|max:255|unique:users',
+            'password' => 'required|string|min:8',
+            'confirmpassword' =>'required|string|max:255',
+            'company' => 'required|string|max:255',
             'role' => 'required|string',
         ]);
         
@@ -26,6 +28,8 @@ class InputController extends Controller
             'username' => $request->input('username'),
             'email' => $request->input('email'),
             'password' => $request->input('password'),
+            'confirmpassword' => $request->input('confirmpassword'),
+            'company' => $request->input('company'),
             'role' => $request->input('role'),
         ]);
 

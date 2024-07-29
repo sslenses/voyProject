@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\InputController;
+use App\Http\Controllers\VehicleController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -40,3 +41,6 @@ require __DIR__.'/auth.php';
 // route input
 Route::get('items/create', [InputController::class, 'create'])->name('items.create');
 Route::post('items', [InputController::class, 'store'])->name('items.store');
+
+// route table vehicle 
+Route::get('/viewdata', [VehicleController::class, 'index']);
