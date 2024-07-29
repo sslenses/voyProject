@@ -5,6 +5,7 @@ use App\Http\Controllers\InputController;
 use App\Http\Controllers\VehicleController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FleetController;
 use Inertia\Inertia;
 
 Route::get('/', function () {
@@ -26,9 +27,17 @@ Route::get('/rental', function () {
     return Inertia::render('Rental/Page');
 })->name('rentals.page');
 
+
 Route::get('/vehicle', function () {
     return Inertia::render('Vehicle/Page');
 })->name('vehicles.page');
+
+Route::get('/fleets', [FleetController::class, 'index']);
+
+
+Route::get('/viewdata', function () {
+    return Inertia::render('Vehicle/Partials/ViewVehiclesTable');
+})->name('viewdatas.page');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -42,5 +51,4 @@ require __DIR__.'/auth.php';
 Route::get('items/create', [InputController::class, 'create'])->name('items.create');
 Route::post('items', [InputController::class, 'store'])->name('items.store');
 
-// route table vehicle 
-Route::get('/viewdata', [VehicleController::class, 'index']);
+// route table vehicle
