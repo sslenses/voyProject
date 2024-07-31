@@ -2,9 +2,9 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/react";
 import { PageProps } from "@/types";
 import FormAdminLayout from "@/Layouts/FormAdminLayout";
+import AsideMenu from "./Dashboard/Partials/AsideMenu";
 
 export default function Dashboard({ auth }: PageProps) {
-    
     return (
         <AuthenticatedLayout
             user={auth.user}
@@ -15,7 +15,14 @@ export default function Dashboard({ auth }: PageProps) {
             }
         >
             <Head title="Dashboard" />
-            <FormAdminLayout />
+            <div className="flex w-full px-8">
+                <div className=" pt-12">
+                    <AsideMenu />
+                </div>
+                <div className="w-full mx-auto px-6 pt-12 pb-6">
+                    <FormAdminLayout />
+                </div>
+            </div>
         </AuthenticatedLayout>
     );
 }
