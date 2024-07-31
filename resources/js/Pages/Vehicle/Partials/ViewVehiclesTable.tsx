@@ -42,12 +42,12 @@ import { ScrollArea, ScrollBar } from "@/Components/ui/scroll-area";
 import { usePage } from "@inertiajs/react";
 import { useEffect } from "react";
 
-export default function ViewVehiclesTable({vehicles}:any) {
+export default function ViewVehiclesTable({ vehicles }: any) {
     useEffect(() => {
         console.log(vehicles);
     }, [vehicles]);
     return (
-        <Card>
+        <Card className="rounded-2xl">
             <CardHeader>
                 <CardTitle>Vehicles</CardTitle>
                 <CardDescription>
@@ -78,76 +78,82 @@ export default function ViewVehiclesTable({vehicles}:any) {
                             </TableRow>
                         </TableHeader>
                         <TableBody>
-                        {vehicles.map((vehicles:any) => (
-                            <TableRow key={vehicles.id}>
-                                <TableCell className="font-medium">
-                                {vehicles.vehicle_id}
-                                </TableCell>
-                                <TableCell>{vehicles.eksternal_id}</TableCell>
-                                <TableCell>{vehicles.license_plate}</TableCell>
-                                <TableCell>
-                                    <Badge
-                                        variant="outline"
-                                        className="text-green-600
+                            {vehicles.map((vehicles: any) => (
+                                <TableRow key={vehicles.id}>
+                                    <TableCell className="font-medium">
+                                        {vehicles.vehicle_id}
+                                    </TableCell>
+                                    <TableCell>
+                                        {vehicles.eksternal_id}
+                                    </TableCell>
+                                    <TableCell>
+                                        {vehicles.license_plate}
+                                    </TableCell>
+                                    <TableCell>
+                                        <Badge
+                                            variant="outline"
+                                            className="text-green-600
                                         outline-green-600"
-                                    >
-                                        {vehicles.model}
-                                    </Badge>
-                                </TableCell>
-                                <TableCell className="hidden md:table-cell">
-                                {vehicles.manufacturer}
-                                </TableCell>
-                                <TableCell className="hidden md:table-cell">
-                                {vehicles.year}
-                                </TableCell>
-                                <TableCell>
-                                    <Badge
-                                        variant="outline"
-                                        className="text-green-600
+                                        >
+                                            {vehicles.model}
+                                        </Badge>
+                                    </TableCell>
+                                    <TableCell className="hidden md:table-cell">
+                                        {vehicles.manufacturer}
+                                    </TableCell>
+                                    <TableCell className="hidden md:table-cell">
+                                        {vehicles.year}
+                                    </TableCell>
+                                    <TableCell>
+                                        <Badge
+                                            variant="outline"
+                                            className="text-green-600
                                         outline-green-600"
-                                    >
-                                        {vehicles.type}
-                                    </Badge>
-                                </TableCell>
-                                <TableCell>{vehicles.has_gps}</TableCell>
-                                <TableCell className="hidden md:table-cell">
-                                {vehicles.has_iot}
-                                </TableCell>
-                                <TableCell>{vehicles.last_service_date}</TableCell>
-                                <TableCell className="hidden md:table-cell">
-                                {vehicles.next_service_due}
-                                </TableCell>
-                                <TableCell>{vehicles.partner_id}</TableCell>
+                                        >
+                                            {vehicles.type}
+                                        </Badge>
+                                    </TableCell>
+                                    <TableCell>{vehicles.has_gps}</TableCell>
+                                    <TableCell className="hidden md:table-cell">
+                                        {vehicles.has_iot}
+                                    </TableCell>
+                                    <TableCell>
+                                        {vehicles.last_service_date}
+                                    </TableCell>
+                                    <TableCell className="hidden md:table-cell">
+                                        {vehicles.next_service_due}
+                                    </TableCell>
+                                    <TableCell>{vehicles.partner_id}</TableCell>
 
-                                <TableCell>
-                                    <DropdownMenu>
-                                        <DropdownMenuTrigger asChild>
-                                            <Button
-                                                aria-haspopup="true"
-                                                size="icon"
-                                                variant="ghost"
-                                            >
-                                                <MoreHorizontal className="h-4 w-4" />
-                                                <span className="sr-only">
-                                                    Toggle menu
-                                                </span>
-                                            </Button>
-                                        </DropdownMenuTrigger>
-                                        <DropdownMenuContent align="end">
-                                            <DropdownMenuLabel>
-                                                Actions
-                                            </DropdownMenuLabel>
-                                            <DropdownMenuItem>
-                                                Edit
-                                            </DropdownMenuItem>
-                                            <DropdownMenuItem>
-                                                Delete
-                                            </DropdownMenuItem>
-                                        </DropdownMenuContent>
-                                    </DropdownMenu>
-                                </TableCell>
-                            </TableRow>
-                         ))}
+                                    <TableCell>
+                                        <DropdownMenu>
+                                            <DropdownMenuTrigger asChild>
+                                                <Button
+                                                    aria-haspopup="true"
+                                                    size="icon"
+                                                    variant="ghost"
+                                                >
+                                                    <MoreHorizontal className="h-4 w-4" />
+                                                    <span className="sr-only">
+                                                        Toggle menu
+                                                    </span>
+                                                </Button>
+                                            </DropdownMenuTrigger>
+                                            <DropdownMenuContent align="end">
+                                                <DropdownMenuLabel>
+                                                    Actions
+                                                </DropdownMenuLabel>
+                                                <DropdownMenuItem>
+                                                    Edit
+                                                </DropdownMenuItem>
+                                                <DropdownMenuItem>
+                                                    Delete
+                                                </DropdownMenuItem>
+                                            </DropdownMenuContent>
+                                        </DropdownMenu>
+                                    </TableCell>
+                                </TableRow>
+                            ))}
                         </TableBody>
                     </Table>
 
