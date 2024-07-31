@@ -14,14 +14,40 @@ import {
     DropdownMenuTrigger,
 } from "@/Components/ui/dropdown-menu";
 import { useEffect } from "react";
+import AsideMenu from "../Dashboard/Partials/AsideMenu";
 
-export default function Page({ vehicles }: any) {
+// export default function Page({ vehicles, }: any) {
+//     useEffect(() => {
+//         console.log(vehicles);
+//     }, [vehicles]);
+//     return <ViewVehiclesTable vehicles={vehicles} />;
+// }
+
+export default function Page({ auth, vehicles }: PageProps) {
     useEffect(() => {
         console.log(vehicles);
     }, [vehicles]);
-    return <ViewVehiclesTable vehicles={vehicles} />;
+    return (
+        <AuthenticatedLayout
+            user={auth.user}
+            header={
+                <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                    Dashboard
+                </h2>
+            }
+        >
+            <Head title="Dashboard" />
+            <div className="flex w-full px-8">
+                <div className=" pt-12">
+                    <AsideMenu />
+                </div>
+                <div className="px-6 pt-12 pb-6 overflow-y-auto">
+                    <ViewVehiclesTable vehicles={vehicles} />
+                </div>
+            </div>
+        </AuthenticatedLayout>
+    );
 }
-
 // export default function Page({
 //     auth,
 // }: PageProps<{ mustVerifyEmail: boolean; status?: string }>) {
