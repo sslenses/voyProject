@@ -14,21 +14,10 @@ export default function Dashboard({ auth }: PageProps) {
                     Dashboard
                 </h2>
             }
+            auth={auth}
         >
-            <div className="flex w-full px-8">
-                <Head title="Dashboard" />
-                <div className=" pt-12">
-                    <AsideMenu />
-                </div>
-                <div className="flex flex-col w-full mx-auto px-6 pt-12 pb-6 gap-6">
-                    <div>
-                        <Navbar user={auth.user} />
-                    </div>
-                    <div>
-                        <FormAdminLayout />
-                    </div>
-                </div>
-            </div>
+            <Head title="Dashboard" />
+            <FormAdminLayout />
         </AuthenticatedLayout>
     );
 }

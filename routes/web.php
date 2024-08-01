@@ -22,8 +22,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/nganu', function () {
-    return Inertia::render('Dashboard/Page');
-})->middleware(['auth', 'verified'])->name('dashboard.page');
+    return Inertia::render('Dashboard/DashboardLayout');
+})->middleware(['auth', 'verified'])->name('dashboard.nganua');
 
 
 

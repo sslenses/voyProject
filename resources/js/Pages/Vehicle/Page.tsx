@@ -35,6 +35,7 @@ export default function Page({ auth, vehicles }: PageProps) {
                     Dashboard
                 </h2>
             }
+            auth={undefined}
         >
             <Head title="Dashboard" />
             <div className="flex w-full px-8">
