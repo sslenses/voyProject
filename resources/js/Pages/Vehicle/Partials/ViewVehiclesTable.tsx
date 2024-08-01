@@ -47,7 +47,7 @@ export default function ViewVehiclesTable({ vehicles }: any) {
         console.log(vehicles);
     }, [vehicles]);
     return (
-        <Card className="rounded-2xl">
+        <Card className="rounded-2xl ">
             <CardHeader>
                 <CardTitle>Vehicles</CardTitle>
                 <CardDescription>
@@ -55,9 +55,9 @@ export default function ViewVehiclesTable({ vehicles }: any) {
                     kendaraan yang Anda kelola.
                 </CardDescription>
             </CardHeader>
-            <CardContent>
-                <ScrollArea className="max-w-full whitespace-nowrap rounded-md border">
-                    <Table>
+            <CardContent className="overflow-x-auto">
+                <ScrollArea className="w-full whitespace-nowrap rounded-md border">
+                    <Table className="min-w-full">
                         <TableHeader>
                             <TableRow>
                                 <TableHead>ID</TableHead>

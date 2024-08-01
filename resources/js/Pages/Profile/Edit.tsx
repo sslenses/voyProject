@@ -22,7 +22,7 @@ export default function Edit({
         >
             <Head title="Profile" />
 
-            <div className="py-6 space-y-6">
+            <div className=" space-y-6">
                 <div className="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                     <UpdateProfileInformationForm
                         mustVerifyEmail={mustVerifyEmail}

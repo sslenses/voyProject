@@ -12,7 +12,7 @@ export default function Navbar({
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
     return (
-        <nav className="w-full rounded-2xl bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+        <nav className="w-full rounded-2xl bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700d">
             <div className="flex justify-between h-20 px-4">
                 <div className="flex">
                     <div className="shrink-0 flex items-center">
