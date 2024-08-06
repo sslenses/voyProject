@@ -3,6 +3,7 @@ import { Head } from "@inertiajs/react";
 import { User } from "@/types";
 import AsideMenu from "@/Pages/Dashboard/Partials/AsideMenu";
 import Navbar from "@/Pages/Dashboard/Partials/Navbar";
+import LeftNavbar from "@/Pages/Dashboard/Partials/LeftNavbar/LeftNavbar";
 
 type AuthenticatedLayoutProps = PropsWithChildren<{
     user: User;
@@ -19,7 +20,8 @@ export default function AuthenticatedLayout({
             <Head title="Dashboard" />
             <div className="flex w-full">
                 <div className="pt-4">
-                    <AsideMenu />
+                    {/* <AsideMenu /> */}
+                    <LeftNavbar />
                 </div>
                 <div className="flex flex-col w-full mx-auto px-6 pt-4 gap-12 overflow-auto">
                     <Navbar user={auth.user} />
