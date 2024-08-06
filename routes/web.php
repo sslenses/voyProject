@@ -52,3 +52,6 @@ Route::get('items/create', [InputController::class, 'create'])->name('items.crea
 Route::post('items', [InputController::class, 'store'])->name('items.store');
 
 // route table vehicle
+
+Route::get('/vehicles/create', [VehicleController::class, 'create'])->name('vehicles.create');
+Route::post('/vehicles', [VehicleController::class, 'store'])->name('vehicles.store');
