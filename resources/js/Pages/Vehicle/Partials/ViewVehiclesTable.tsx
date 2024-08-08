@@ -63,15 +63,15 @@ export default function ViewVehiclesTable({ vehicles }: any) {
                                 <TableHead>ID</TableHead>
                                 <TableHead>External ID</TableHead>
                                 <TableHead>License Plate</TableHead>
-                                <TableHead>Operating Condition</TableHead>
-                                <TableHead>Fleet</TableHead>
-                                <TableHead>With</TableHead>
-                                <TableHead>Status</TableHead>
-                                <TableHead>Mileage</TableHead>
-                                <TableHead>Last Rental At</TableHead>
-                                <TableHead>Voltage</TableHead>
-                                <TableHead>Recorded At</TableHead>
-                                <TableHead>State of Charge</TableHead>
+                                <TableHead>Model</TableHead>
+                                <TableHead>Manufacturer</TableHead>
+                                <TableHead>Year</TableHead>
+                                <TableHead>Type</TableHead>
+                                <TableHead>Last Service</TableHead>
+                                <TableHead>Next Service</TableHead>
+                                <TableHead>Partner Id</TableHead>
+                                <TableHead>Emission Standart</TableHead>
+                                <TableHead>Carbon Emission</TableHead>
                                 <TableHead>
                                     <span className="sr-only">Actions</span>
                                 </TableHead>
@@ -79,7 +79,7 @@ export default function ViewVehiclesTable({ vehicles }: any) {
                         </TableHeader>
                         <TableBody>
                             {vehicles.map((vehicles: any) => (
-                                <TableRow key={vehicles.id}>
+                                <TableRow key={vehicles.model}>
                                     <TableCell className="font-medium">
                                         {vehicles.vehicle_id}
                                     </TableCell>
@@ -113,17 +113,17 @@ export default function ViewVehiclesTable({ vehicles }: any) {
                                             {vehicles.type}
                                         </Badge>
                                     </TableCell>
-                                    <TableCell>{vehicles.has_gps}</TableCell>
-                                    <TableCell className="hidden md:table-cell">
-                                        {vehicles.has_iot}
-                                    </TableCell>
-                                    <TableCell>
-                                        {vehicles.last_service_date}
-                                    </TableCell>
+                                    <TableCell>{vehicles.last_service_date}</TableCell>
                                     <TableCell className="hidden md:table-cell">
                                         {vehicles.next_service_due}
                                     </TableCell>
-                                    <TableCell>{vehicles.partner_id}</TableCell>
+                                    <TableCell>
+                                        {vehicles.partner_id}
+                                    </TableCell>
+                                    <TableCell className="hidden md:table-cell">
+                                        {vehicles.emission_standart}
+                                    </TableCell>
+                                    <TableCell>{vehicles.carbon_emissions}</TableCell>
 
                                     <TableCell>
                                         <DropdownMenu>

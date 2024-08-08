@@ -5,10 +5,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useForm, usePage } from '@inertiajs/react';
 import { FormEventHandler, useEffect } from 'react';
 
-export default function InputVehicle({ vehicles }: any) {
+export default function InputVehicle({ partners }: any) {
     useEffect(() => {
-        console.log(vehicles);
-    }, [vehicles]);
+        console.log(partners);
+    }, [partners]);
 
     const csrf = usePage().props;
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -26,6 +26,9 @@ export default function InputVehicle({ vehicles }: any) {
         partner_id: '',
     });
 
+    const handlePartnerChange = (value: string) => {
+        setData('partner_id', value); // Update state dengan nilai yang dipilih
+    };
     const submit: FormEventHandler = (e) => {
         e.preventDefault();
         console.log(data);
@@ -64,7 +67,18 @@ export default function InputVehicle({ vehicles }: any) {
                             {errors.year && <div className="error">{errors.year}</div>}
 
                             <Label htmlFor="partner_id" className="font-extrabold">Partner ID</Label>
-                            <Input type="number" id="partner_id" name="partner_id" value={data.partner_id} onChange={(e) => setData('partner_id', e.target.value)} placeholder="eg. Partner ID" />
+                            <Select name="partner_id" value={data.partner_id} onValueChange={handlePartnerChange}>
+                                <SelectTrigger>
+                                    <SelectValue placeholder="Select Partner" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    {partners.map((partner: any) => (
+                                        <SelectItem key={partner.id} value={partner.id.toString()}>
+                                            {partner.name}
+                                        </SelectItem>
+                                    ))}
+                                </SelectContent>
+                            </Select>
                             {errors.partner_id && <div className="error">{errors.partner_id}</div>}
 
                             

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vehicle;
+use App\Models\Partner_id;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -21,9 +22,9 @@ class VehicleController extends Controller
 
     public function create()
     {
-        $vehicles = Vehicle::all();
+        $partners = Partner_id::all();
         return Inertia::render('Vehicle/Partials/InputVehicle',[
-            'vehicles' => $vehicles,
+            'partners' => $partners,
         ]);
     }
 
