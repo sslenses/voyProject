@@ -1,10 +1,9 @@
 import { useState, PropsWithChildren, ReactNode } from "react";
-import ApplicationLogo from "@/Components/ApplicationLogo";
 import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
-import { Link } from "@inertiajs/react";
 import { User } from "@/types";
+import { Bell, CircleUser, Settings } from "lucide-react";
 
 export default function Navbar({
     user,
@@ -15,12 +14,6 @@ export default function Navbar({
         <nav className="w-full rounded-2xl bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700d">
             <div className="flex justify-between h-20 px-4">
                 <div className="flex">
-                    <div className="shrink-0 flex items-center">
-                        <Link href="/">
-                            <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
-                        </Link>
-                    </div>
-
                     <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                         <NavLink
                             href={route("dashboard")}
@@ -32,7 +25,7 @@ export default function Navbar({
                 </div>
 
                 <div className="hidden sm:flex sm:items-center sm:ms-6">
-                    <div className="ms-3 relative">
+                    <div className=" relative">
                         <Dropdown>
                             <Dropdown.Trigger>
                                 <span className="inline-flex rounded-md">
@@ -40,6 +33,8 @@ export default function Navbar({
                                         type="button"
                                         className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150"
                                     >
+                                        <CircleUser className="w-4 h-4 mx-1" />
+
                                         {user.name}
 
                                         <svg
@@ -71,6 +66,18 @@ export default function Navbar({
                                 </Dropdown.Link>
                             </Dropdown.Content>
                         </Dropdown>
+                    </div>
+                    <div
+                        className="inline-flex items-center px-1 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150
+"
+                    >
+                        <Settings className="h-4 w-4" />
+                    </div>
+                    <div
+                        className="inline-flex items-center px-1 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150
+"
+                    >
+                        <Bell className="h-4 w-4" />
                     </div>
                 </div>
 
